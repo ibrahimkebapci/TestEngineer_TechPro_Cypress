@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Elemanları</title>
+</head>
+<body>
+    <h1>Form Elemanları</h1>
+    <form action="user/Update" method="post"></form>
+        <label for="ad">Adınız</label>
+        <input type="text" id="ad">
+        <br><br>
+
+        <label for="Soyad">Soyadınız</label>
+        <input type="text" id="Soyad">
+        <br><br>
+
+        <label for="Yas">Yaşınız</label>
+        <input type="number" id="Yas">
+        <br><br>
+
+        <label for = "eposta" > Eposta adresiniz:</label>
+        <input type="email" id="eposta">
+
+        <label for="sifre">Şifreniz:</label>
+        <input type="password" id="sifre">
+        <br><br>
+
+    <label>Cinsiyetinizi Seçiniz</label>
+    <br>
+    <label for="bay">Bay</label>
+    <input type="radio" id="Bay" name="cins">
+    <label for="bayan">bayan</label>
+    <input type="radio" id = "bayan" name="cins">
+    <br><br>
+
+    <label>Hobileriniz:</label>
+    <br>
+    <label for="spor">Spor</label>
+    <input type="checkbox" id="spor">
+    <label for="müzik">Müzik</label>
+    <input type="checkbox" id="müzik">
+    <label for="spor">spor</label>
+    <input type="checkbox" id="spor">
+    <br>
+
+    <label for="tarih">Doğum Tarihiniz:</label>
+    <input type="datetime-local" id="tarih">
+    <br><br>
+
+    <label for="renk">Sevdiğiniz Renk:</label>
+    <input type="color" id = "renk">
+    <br><br>
+
+    <label for="dosya">CV'nizi Ekleyiniz</label>
+    <input type="file" id="dosya">
+
+    <label for="kurs">Hangi Kursu Almak İstiyorsunuz: </label>
+    <select id="kurs">
+        <option value="00">Seçiniz:</option>
+        <option value="02">Java Dev</option>
+        <option value="03">Beckend Dev</option>
+        <option value="04">Fronted Dev</option>
+    </select>
+
+    <br><br>
+    <label for="mesaj">Kendinizden Bahsediniz</label>
+    <textarea  id="mesaj" cols="30" rows="10">Mesajınızı yazınız</textarea>
+    <br><br>
+
+    <input type="botton" value="Buton">
+    <input type="submit" value="Formu Gönder">
+    <input type="reset" value="Formu Temizle">
+    <br><br><br><br>
+
+</body>
+</html>
