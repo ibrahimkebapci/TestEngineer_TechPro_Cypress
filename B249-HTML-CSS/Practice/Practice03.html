@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pracitice03</title>
+  </head>
+  <body>
+    <h1>Hayvanat Bahçesi Ziyaretçi Formu</h1>
+    <form action="user/Update" method="post"></form>
+    <label for="ad">Adınız:</label>
+    <input type="text" id="ad" />
+    <br /><br />
+    <label for="eposta">Eposta adresiniz:</label>
+    <input type="text" id="eposta" />
+    <br /><br />
+    <label for="Yasınız">Yasınız:</label>
+    <input type="text" id="Yasınız" />
+    <br /><br />
+
+    <label for="Bölüm">Ziyaret etmek istediğiniz Bölümü Seçiniz</label>
+    <select name="select" id="Bölüm">
+      <option value="0">Seçiniz</option>
+      <option value="1">Aslan Bölümü</option>
+      <option value="2">Fil Bölümü</option>
+      <option value="3">Zürafa bölümü</option>
+    </select>
+
+    <label for="Seçimler">En sevdiğiniz havanu seçiniz</label>
+    <ul>
+      <li>
+        <input type="radio" name="Aslan" id="Seçimler" />
+        <label for="Aslan">Aslan</label>
+        <br />
+      </li>
+      <li>
+        <input type="radio" name="Fil" id="Seçimler" />
+        <label for="Fil">Fil</label>
+        <br />
+      </li>
+      <li>
+        <input type="radio" name="Zürafa" id="Seçimler" />
+        <label for="Zürafa">Zürafa</label>
+      </li>
+    </ul>
+
+    <label for="Yorumlar">Hayvanat Bahçesi hakkında Yorumlar</label>
+    <br />
+    <textarea
+      name="İnsanların Yorumları"
+      id="Yorumlar"
+      cols="30"
+      rows="10"
+    ></textarea>
+
+    <label for="Butonlar"></label>
+    <br />
+    <input type="submit" value="Gönder" />
+    <input type="reset" value="Formu Sıfırla" />
+  </body>
+</html>
