@@ -1,44 +1,109 @@
 <!DOCTYPE html>
 <html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halil İbrahim Kebapci | Profil Sayfası</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ibrahimkebapci | Profil Sayfası</title>
+    <link rel="stylesheet" href="../MyProfile/css/style.css" />
+  </head>
+  <body>
     <div id="header">
-        <h1>Halil İbrahim Kebapci</h1>
-        <h2>junior Software Test Engeneer</h2>
+      <h1>Halil İbrahim Kebapci</h1>
+      <h2>Software Test Engneer</h2>
     </div>
-    <div id = "main">
-        <div id="Hakkimda">
-            <h2>Hakkımda</h2>
-            <div id="Profil">
-                <img src="../images/resim1.jpg" width="200">
-                <p>Github : https://github.com/ibrahimkebapci
-                    Oynanış vidoları: https://drive.google.com/drive/folders/1fBaWP6iSA7o4G4WtWKb3ih3hl_oSSb97
-                    Merhaba Ben İbrahim. şu anda aktif olarak Test mühendisliği alanında çalışmakta ve kendimi geliştirmeye devam etmekteyim.
-                    
-                    Geliştirmiş olduğum projelerin kodlarına ve videolarına yukarıda bulunan linkler yardımı ile ulaşabilirsiniz</p>
-            </div>
-        </div>
-        <div id="beceriler">
-            <h2>Beceriler</h2>
-            <ul>
-                <li>Test Otomasyonu</li>
-                <li>Java dili</li>
-                <li>Agile Test Müh</li>
-                
-            </ul>
-        </div>
 
-        <div id="portfoy">
-            <h2>Portföy</h2>
-            <div class="proje">
-                <h3></h3>
-            </div>
-
+    <div id="main">
+      <div id="hakkimda">
+        <h2>Hakkımda</h2>
+        <div id="profil">
+          <img src="../images/resim1.jpg" width="200" />
+          <br />
+          <p>
+            Github : https://github.com/ibrahimkebapci<br>Oynanış vidoları : https://drive.google.com/drive/folders/1fBaWP6iSA7o4G4WtWKb3ih3hl_oSSb97 <br>
+            Merhaba Ben İbrahim. şu anda aktif olarak Test mühendisliği alanında
+            çalışmakta ve kendimi geliştirmeye devam etmekteyim. Geliştirmiş
+            olduğum projelerin kodlarına ve videolarına yukarıda bulunan linkler
+            yardımı ile ulaşabilirsiniz
+          </p>
         </div>
+      </div>
+      <div id="beceriler">
+        <h2>Beceriler</h2>
+        <ul>
+          <li>Programlama Dili (Java)</li>
+          <li>Test Otomasyonu (Selenium)</li>
+          <li>API Testleri (Postman, REST Assured)</li>
+          <li>Veritabanı Sorgulama (PostGre-SQL)</li>
+          <li>Proje Yönetim Aracı (JIRA / XRAY)</li>
+          <li>Performans Testleri (JMeter)</li>
+          <li>Versiyon Kontrolü (Git-Github)</li>
+          <li>Test Senaryosu ve Test Planı Hazırlama</li>
+          <li>Agile Test Metodolojileri</li>
+          <li>Web Tasarımı (HTML/CSS)</li>
+        </ul>
+      </div>
+      <div id="portfoy">
+        <h2>Portföy</h2>
+        <div class="proje">
+          <h3>Web Uygulama Testi</h3>
+          <p>
+            Bir web uygulamasının test senaryolarını hazırlayarak otomasyon
+            scriptlerini yazdım, hataları belirledim ve uygulamanın sorunsuz bir
+            şekilde çalışmasını sağladım.
+          </p>
+          <a href="https://github.com/gurkaybirinci" target="_blank">
+            Projeyi İncele
+          </a>
+        </div>
+        <div class="proje">
+          <h3>API Otomasyon Testi</h3>
+          <p>
+            Postman ve REST Assured kütüphanesini kullanarak web uygulamasına
+            ait API'lerin otomasyon testleri yazdım ve raporladım.
+          </p>
+          <a href="https://github.com/gurkaybirinci" target="_blank"
+            >Projeyi İncele</a
+          >
+        </div>
+      </div>
+      <div id="iletisim">
+        <h2>İletişim</h2>
+        <ul>
+          <li><span>Email:</span> ibrahimkebapci21@gmail.com</li>
+          <li>
+            <span>LinkedIn:</span>
+            <a
+              href="https://www.linkedin.com/in/ibrahim-kebap%C3%A7%C4%B1-30a6a019a/"
+              target="_blank"
+            ></a>
+            LinkedIn Sayfam
+          </li>
+          <li>
+            <span>Github:</span>
+            <a href="https://github.com/ibrahimkebapci" target="_blank"></a>
+            Github Sayfam
+          </li>
+          <li><span>Tel No:</span> +90 555 1234567</li>
+          <li><span>Adres:</span> Ankara, Türkiye</li>
+        </ul>
+      </div>
+      <div id="mesaj">
+        <h2>Mesaj Bırakın</h2>
+        <form>
+          <label for="ad">Ad Soyad:</label>
+          <input type="text" id="ad" />
+          <br /><br />
+          <label for="eposta">Eposta Adresi:</label>
+          <input type="email" id="eposta" />
+          <br /><br />
+          <label for="mesaj">Mesajınız:</label>
+          <br />
+          <textarea id="mesaj" cols="40" rows="5"></textarea>
+          <br /><br />
+          <input type="submit" />
+          <button type="submit">Gönder</button>
+        </form>
+      </div>
     </div>
-</body>
+  </body>
 </html>
