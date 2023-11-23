@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom-2</title>
+    <style>
+        .blue
+        {
+            color:blue;
+            font-weight:bold;
+        }
+        .heiglight
+        {
+            background-color: aqua;
+            font-style: italic;
+
+        }
+        .big-size
+        {
+            font-size: 5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="title blue heiglight" style="color: red">
+        Document <span style="color: aliceblue">Object</span>Model
+      </h1>
+
+    ul class="menu">
+      <li>ul.menu>li*5>lorem4</li>
+      <li>Maxime velit corporis ullam.</li>
+      <li>Minus laborum tenetur praesentium!</li>
+      <li>Quos officia impedit amet.</li>
+      <li>Atque hic optio saepe.</li>
+    </ul>
+
+    <p>
+      <span>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
+        architecto exercitationem sunt qui sed libero earum ea cum quam
+        voluptatibus. Dicta quam ea cupiditate ratione sint praesentium ad,
+        veniam debitis?
+        </span><span
+        >Quidem officia suscipit accusamus harum laudantium nisi dolorum ratione
+        nulla eum blanditiis ullam voluptatibus commodi, consequatur aliquid
+        quam ipsum necessitatibus exercitationem, beatae velit delectus. Vero
+        dolor hic assumenda. Voluptates, exercitationem.
+    </span>
+    </p>
+
+    <script>
+        const title = document.querySelector("h1.title");
+        title.innerText = "Hello DOM";
+
+        const text1= document.querySelector(".about em")
+        console.log(text1);
+        text1.innerHTML ="<u>Test</u>"
+
+        title.classList.add("big-size")
+        title.classList.remove("higlight")
+
+    </script>
+</body>
+</html>
