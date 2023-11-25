@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom</title>
+  </head>
+  <body>
+    <input type="number" id="txtPrice" />
+    <button onclick="getprice()">Get Price</button>
+    <p id="result"></p>
+
+    <script>
+      function getprice() {
+        const txtPrice = document.querySelector("#txtPrice");
+        const lblresult = document.querySelector("#lblResult");
+
+        let Price = txtPrice.value;
+
+        if (Price > 500) {
+          // Price =Price-Price * 10/100;
+          Price *= 0.9;
+          lblresult.innerHTML = "Price" + Price;
+          
+        }
+      }
+    </script>
+  </body>
+</html>
