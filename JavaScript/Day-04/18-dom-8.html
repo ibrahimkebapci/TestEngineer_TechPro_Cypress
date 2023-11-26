@@ -19,7 +19,8 @@
         border-radius: 50%;
         border: none;
         background-color: chartreuse;
-        box-shadow: 10 3px 5 px black;
+        box-shadow: 10 3px 5px black;
+        cursor: pointer;
       }
     </style>
   </head>
@@ -56,7 +57,21 @@
       >
     </p>
 
-    <button class="mode">Mode</button>
-    <script></script>
+    <button class="mode" onclick="setMode()">Mode</button>
+    <script>
+      function setMode()
+      {
+        const body = document.querySelector("body");
+        if(body.classList.contains("dark"))
+        {
+          body.classList.remove("dark")
+        }
+        else{
+          body.classList.add("dark")
+
+        }
+        
+      }
+    </script>
   </body>
 </html>

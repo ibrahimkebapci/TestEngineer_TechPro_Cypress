@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom</title>
+  </head>
+  <body>
+    <input type="number" id="txtPrice" />
+    <button onclick="getprice()">Get Price</button>
+    <p id="result"></p>
+
+    <script>
+      function getprice() {
+        const txtPrice = document.querySelector("#txtPrice");
+        const lblresult = document.querySelector("#lblResult");
+
+        let Price = txtPrice.value;
+        
+        switch(true)
+        {
+
+            case Price>1500:
+            Price*= 0.85;
+            break;
+
+            case Price > 1000:
+            Price*= 0.87;
+            break;
+
+            case Price > 700:
+            Price*= 0.90;
+            break;
+
+            case Price >500:
+            Price*= 0.93;
+            break;
+
+            case Price > 300:
+            Price*= 0.95;
+            break;
+
+            default:
+            Price *= 0.98;
+        }
+
+        lblresult.innerHTML = "last Price: " + Price;
+        
+    }
+    </script>
+  </body>
+</html>

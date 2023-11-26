@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Do while</title>
+  </head>
+  <body>
+    <input type="number" id="txtNum" />
+    <button onclick="calculate()">Calculate</button>
+
+    <h3 id="result"></h3>
+
+    <script>
+      function calculate() {
+        const txtNum = document.querySelector("#txtNum");
+        let num = txtNum.value;
+        let toplam = 0;
+
+        do {
+          const sonBasamak = num % 10;
+          toplam = toplam + sonBasamak;
+
+          num = Math.floor(num / 10);
+        } while (num > 0);
+
+        document.querySelector("#result").innerHTML = toplam;
+      }
+    </script>
+  </body>
+</html>
