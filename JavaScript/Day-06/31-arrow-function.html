@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="number" id="txtPrice" placeholder="Product Price" /><br />
+    <input type="number" id="txtTaxRate" placeholder="Tax rate" /><br />
+    <input
+      type="number"
+      id="txtDiscountRate"
+      placeholder="Discount rate"
+    /><br />
+    <button onclick="getPrice()">Get Price</button>
+
+    <script>
+      const getprice = () => {
+        const txtPrice = document.querySelector("#txtPrice");
+        const txtTaxRate = document.querySelector("#txtTaxRate");
+        const txtDiscountRate = document.querySelector("#txtDiscountRate");
+
+        const price = txtPrice.value;
+        const taxRate = txtTaxRate.value;
+        const discountRate = txtDiscountRate.value;
+
+        if (
+          !price  ||
+          !taxRate  ||
+          !discountRate 
+        ) {
+          alert("Please fill all fields");
+          return;
+        }
+
+        const result = setPrice(price, taxRate, discountRate);
+        alert("Bu bir Fiyat" + result);
+      };
+
+      const setPrice = (price, txtRate, discountRate) => {
+        if (price > 1500) {
+          discountRate += 10;
+        }
+
+        if (discountRate <= 0) {
+          taxRate = 0;
+        }
+
+        const totalTax = (price * taxRate) / 100;
+        const totalDiscount = (price * discountRate) / 100;
+        const total = price - totalDiscount + totalTax;
+
+        return total;
+      };
+    </script>
+  </body>
+</html>

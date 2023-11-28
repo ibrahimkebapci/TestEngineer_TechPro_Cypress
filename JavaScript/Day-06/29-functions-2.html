@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+    <input type="text" id="txtNum" oninput="calculate()">
+    <p id ="lblResult"></p>
+
+    <script>
+        function calculate()
+        {
+            const txtNum = document.querySelector("#txtNum");
+            const lblResult = document.querySelector("#txtNum");
+
+            const num = Number(txtNum.value);
+            console.log(num)
+
+            lblResult.innerHTML = "";
+            
+            if(!num)
+            {
+                lblResult.innerHTML = "Invalid number"
+                return;
+            }
+
+            const result = isPrimeNumber(num)
+
+            
+            if(result)
+            {
+                lblResult.innerHTML =  num + "is a prime number"
+            }
+            else
+            {
+                lblResult.innerHTML = num + "is not a prime number"
+
+            }
+
+
+
+
+            function isPrimeNumber(num)
+            {
+
+            }
+            for(let i=2; i<num; i++)
+            {
+                if(num % i === 0)
+                {
+                    return false;
+                }                
+            }
+                return true;
+
+
+        }
+    </script>
+</body>
+</html>

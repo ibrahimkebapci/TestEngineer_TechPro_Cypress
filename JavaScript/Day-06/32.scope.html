@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scope</title>
+  </head>
+  <body>
+    <script>
+      let globalScopeVariable = 21;
+
+      const myFunction = () => {
+        let functionScopeVariable = 33;
+
+        if (functionScopeVariable > 0) {
+          let blockScopeVariable = 50;
+          blockScopeVariable += globalScopeVariable;
+          console.log(blockScopeVariable);
+        }
+      };
+
+      myFunction();
+    </script>
+  </body>
+</html>
