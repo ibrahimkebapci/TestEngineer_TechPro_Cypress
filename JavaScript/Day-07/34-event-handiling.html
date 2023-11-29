@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling</title>
+</head>
+<body>
+    <button id="btnSayHello1">Say Hello 1</button>
+    <button id="btnSayHello2">Say Hello 2</button>
+    <button id="btnSayHello3">Say Hello 3</button>
+
+    <script>
+        //1.yöntem
+        function btnSayHello1()
+        {
+            alert("Hello 1");
+        }
+        //2.yöntem
+        const sayHello2 = () => 
+        {
+            alert("Hello 2");
+        }
+
+        document.querySelector("#btnSayHello2").onclick = sayHello2();
+
+        //3.Yöntem
+
+        document.querySelector("#btnSayHello3").addEventListener("click",() =>
+        {
+            alert("Hello 3")
+        });
+
+
+</script>
+</body>
+</html>

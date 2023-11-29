@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button id="btnStart" onclick="start()">Start</button>
+    <div>
+        <input type="number" id = "txtNum">
+        <button onclick="predict()">Predict</button>
+    </div>
+
+    <h4 id="lblresult"></h4>
+
+    <script>
+        const txtNum = document.querySelector("#txtNum");
+        const lblresult = document.querySelector("#lblresult");
+        const gamePanel = document.querySelector("#gamePanel");
+        let randomNumber;
+        console.log(randomNumber)
+
+        const start = () =>
+        {
+            btnStart.classList.add("hidden");
+            gamePanel.classList.remove("hidden");
+            lblresult = generateRandomNumber();
+            randomNumber = generateRandomNumber();
+        };
+        const predict= () =>
+
+        {
+            const predictNumber = Number(txtNum.value);
+
+            lblresult.innerHTML = "";
+
+            
+            if(!predictNumber || predictNumber<=0 || predictedNumber>100)
+            {
+                lblresult.innerHTML = "Type a number between 1-100";
+                return;
+            }
+
+            if(predictNumber === randomNumber)
+            {
+                lblresult.innerHTML = "You Won";
+                btnStart.classList.add("hidden");
+            gamePanel.classList.remove("hidden");
+            }
+            else if(predictedNumber > randomNumber)
+            {
+                lblresult.innerHTML = "Decrease the number";
+            }
+            else
+            {
+                lblresult.innerHTML = "Raise the number";
+            }
+
+            txtNum.text = ""
+            txtNum.focus();
+        }
+
+        //Math.random() * (max-min +1)+ min;
+        const generateRandomNumber = (min,max) =>
+        {
+            return Math.floor(Math.random()*100+1);
+        }
+    </script>
+</body>
+</html>

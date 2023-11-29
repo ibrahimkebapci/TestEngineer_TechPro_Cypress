@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling</title>
+</head>
+<body>
+    <input type="number" id = "txtScore1" placeholder = "Score">
+    <input type="number" id = "txtScore2" placeholder = "Score">
+    <input type="number" id = "txtScore3" placeholder = "Score">
+
+    <p><button id="btnShowResult">Show Final Note</button></p>
+    <h4 id="lblresult"></h4>
+
+
+
+    <script>
+        const txtScore1 = document.querySelector("#txtScore1");
+        const txtScore2 = document.querySelector("#txtScore2");
+        const txtScore3 = document.querySelector("#txtScore3");
+        const btnShowResult = document.querySelector("#btnShowResult");
+        const lblresult = document.querySelector("#lblResult");
+  /*  
+        btnShowResult.addEventListener("click" , () =>
+        {
+            const score1 = txtScore1.value;
+            const score2 = txtScore2.value;
+            const score3 = txtScore3.value;
+
+            if(isScoreInvalid(score1))
+                {
+                    alert("Please enter Between 0-100 for the first score");
+                    return;
+                }
+                if(isScoreInvalid(score2))
+                {
+                    alert("Please enter Between 0-100 for the first score");
+                    return;
+                }
+                if(isScoreInvalid(score3))
+                {
+                    alert("Please enter Between 0-100 for the first score");
+                    return;
+                }
+
+                const ort = getAvarage(score1,score2,score3);
+                console.log(ort);
+                lblresult.innerHTML = "Score " + getAvarage / 
+        });
+  */     
+        const isScoreInvalid = (score) => 
+        {
+            return !score || score<0 || score>100
+        }
+
+        const getAvarage = (score1,score2,score3) =>
+        {
+            const average = (Number(score1) + Number(score2) + Number(score3))/3;
+            return average.toFixed(2);
+        }
+
+        const convertScoreToLetter = (score) =>
+        {
+            switch(true)
+            {
+                case score> 90:
+                    return "A";
+                    break;
+                case score => 80:
+                    return "B";
+                case score => 70:
+                    return "C";
+               case score => 50:
+                    return "D";
+               case score => 0:
+                    return "F";
+            }
+        }
+    </script>
+</body>
+</html>
