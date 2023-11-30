@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array</title>
+  </head>
+  <body>
+    <script>
+      const cars1 = ["Porche", "Ferrari", "Bugatti"];
+      const cars2 = ["Land Rover", "Nitsubishi", "Mini Coper"];
+
+      const arr1 = cars1.concat(cars2);
+      console.log(arr1);
+
+      console.log(cars1.includes("Bugatti"));
+      console.log(cars1.includes("bugatti"));
+
+      console.log(cars1.indexOf("Bugatti"));
+      console.log(cars1.indexOf("Bugatti"));
+
+      console.log(cars1.lastIndexOf("Bugatti"));
+      console.log(cars1.lastIndexOf("bugatti"));
+
+      console.log(cars2.join("/"));
+      console.log(cars1.join());
+      console.log(cars1.join(""));
+
+      console.log(cars1.slice(1, 3));
+      console.log(cars1.slice(1, 4));
+    </script>
+  </body>
+</html>

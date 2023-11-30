@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <button id="buttongetNumber">
+        Get Greatest Number
+    </button>
+    
+    <h4 id = "lblResult"></h4>
+
+    <script>
+
+        const nums = [ 12,453,12,5,7,5,8,36,78,2]
+    
+        const btnGetNum = document.querySelector("#btngetNumber");
+        const lblResult = document.querySelector("#lblResult");
+
+        btnGetNum.addEventListener("click", ()=> 
+        {
+            const num = getGreatestNumber(nums);
+            lblResult.innerHTML = num;
+        }) 
+        
+        const getGreatestNumber = (arr) => 
+        {
+            if(!arr || !Array.isArray(arr)||arr.length<=0)  return;
+            {
+                let greatestNumber = arr[0];
+                for(let i=0; i<arr.length; i++)
+                {
+                    if(arr[i] > greatestNumber)
+                    {
+                        greatestNumber = arr[i];
+                    }
+                }
+                return greatestNumber;
+            };
+        };
+    </script>
+
+</body>
+</html>
