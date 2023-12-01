@@ -3,16 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>For Each</title>
+    <title>Map</title>
   </head>
   <body>
     <script>
       const animals = ["fil","kuş","deve","fare","kaplan"];
 
-      animals.forEach( (item,i) => {
-        console.log(i,item);
-      })
+      let newAnimals = [];
 
+      animals.forEach( (item,i) => {
+        newAnimals[i] = items.toUpperCase();
+      });
+
+      newAnimals = animals.map((item) => item.toUpperCase());
+      console.log(animals,newAnimals)
     </script>
   </body>
 </html>

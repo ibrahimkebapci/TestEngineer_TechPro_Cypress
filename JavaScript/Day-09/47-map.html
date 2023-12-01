@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For Each</title>
+  </head>
+  <body>
+    <script>
+          const products=[
+          {id: 1, name: "Laptop", price: 20000},
+          {id: 2, name: "Pc", price: 25000},
+          {id: 3, name: "Ucak", price: 17000},
+          {id: 4, name: "Tank", price: 12000},
+          {id: 5, name: "Araba", price: 7500},
+          ];
+
+          console.log(products);
+
+          const newProducts = products.map((item) => {
+            if(item.price>500)
+          
+            {
+              item.price *=1.10;
+            }
+            else
+            {
+              item.price *= 1.15;
+            }
+
+            return item.price;
+          });
+
+          console.log(newProducts)
+
+    </script>
+  </body>
+</html>

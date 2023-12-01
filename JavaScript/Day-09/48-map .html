@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filter</title>
+  </head>
+  <body>
+    <input type="search" id="txtSearch" />
+    <ul id="listProduct"></ul>
+    <li>test1</li>
+    <li>test1</li>
+    <li>test1</li>
+    <li>test1</li>
+    <script>
+      const txtSearch = document.querySelector("#txtSearch");
+      const products = [
+        { id: 1, name: "Laptop", price: 20000 },
+        { id: 2, name: "Pc", price: 25000 },
+        { id: 3, name: "Ucak", price: 17000 },
+        { id: 4, name: "Tank", price: 12000 },
+        { id: 5, name: "Araba", price: 7500 },
+      ];
+
+      txtSearch.addEventListener("input", (e) => {
+        const text = e.target.value;
+        filterArray(text);
+        console.log(arr);
+      });
+
+      const filterArray = (text) => {
+        const newProducts = products.filter((item) => item.name.includes(text));
+
+        return newProducts;
+      };
+
+      const fillList = (arr) => {
+        let strProducts = "";
+        arr.forEach((item) => {
+          //????? :/
+        });
+      };
+    </script>
+  </body>
+</html>
