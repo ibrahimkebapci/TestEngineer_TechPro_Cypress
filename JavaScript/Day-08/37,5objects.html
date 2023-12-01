@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <select id="listCar" size="5">
+        <option>test1</option>
+        <option>test1</option>
+        <option>test1</option>
+        <option>test1</option>
+      </select>
+    </div>
+    <h3 id="lblValue"></h3>
+
+    <script>
+        const listCar = document.querySelector("#listCar");
+        const lblValue = document.querySelector("#lblValue");
+      const car = {
+        brand: "Audi",
+        model: "Q7",
+        color: "red",
+        year: 2023,
+        doors: 5,
+        seats: 5,
+        engine: "v8",
+        transmission: "Automatic",
+        price: 50000,
+      };
+
+      const fillList = () => {
+        const carKeys = Object.keys(car);
+        console.log(carKeys[i]);
+        let options = "";
+        for (let i = 0; i < carKeys.length; i++) {
+          console.log(carKeys[i]);
+          options += "<optiom> ${carKeys[i]}</option>";
+          console.log(options);
+        }
+        console.log(options);
+
+        listCar.innerHTML = options;
+      };
+
+      listCar.addEventListener("Change", (e) =>
+      {
+        const selectedKey = e.target.value;
+
+        lblValue.innerHTML = car[selectedKey];
+    })
+      
+
+      fillList();
+    </script>
+  </body>
+</html>
