@@ -15,4 +15,4 @@ const loadCountries = () =>
 }
 
 
-loadCountries(); // dakika 47 
+loadCountries(); 

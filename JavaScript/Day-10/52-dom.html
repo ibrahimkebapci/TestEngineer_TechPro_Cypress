@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom</title>
+
+    <style>
+      .bg-red {
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="students">
+      <thead>
+        <tr>
+          <th>Adı</th>
+          <th>Puanı</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Ali</td>
+          <td>50</td>
+        </tr>
+        <tr>
+          <td>Veli</td>
+          <td>55</td>
+        </tr>
+        <tr>
+          <td>Mert</td>
+          <td>70</td>
+        </tr>
+        <tr>
+          <td>Farma</td>
+          <td>80</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button id="btnSetScores">Set Svores</button>
+
+    <script>
+      document.getElementById("btnSetScores").addEventListener("click", () => {
+        const tdScores = document.querySelector(
+          "#students tbody tr td: last-child"
+        );
+        console.log(tdScores);
+
+        tdScores.forEach((item) => {
+          console.log(item);
+          console.log(item.innerText);
+
+          const score = item.innerText;
+          if (score < 50) {
+            item.closest("tr").classList.add("bg-red");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
