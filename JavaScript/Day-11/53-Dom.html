@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom</title>
+  </head>
+  <body>
+    <h1>InnerText & InnetHtml & Text Contect</h1>
+
+    <div class="container"></div>
+
+    <p id="p1">hello World</p>
+    <p>
+      <span style = "display: none">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, iure
+        ipsum aliquid alias, consequatur hic quae harum dolore atque beatae
+        nesciunt eligendi eius fuga doloremque nihil. Laudantium excepturi
+        laborum vero.
+      </span>
+    </p>
+
+    <script>
+        const container = document.querySelector('.container');
+        const p1 = document.getElementById("p1");
+
+        console.log("innerText: ",container.innerText);
+        console.log("innerHtml: ",container.innerHTML);
+        console.log("textContect: ",container.innerHTML);
+
+        p1.innerText = "Hello World 2";
+
+        p1.innerHTML = "<span style = 'color: red'>Hello World</span>";
+
+        p1.innerContent ="<span></span>"
+    </script>
+  </body>
+</html>

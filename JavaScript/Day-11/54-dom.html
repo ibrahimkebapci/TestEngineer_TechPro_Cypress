@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM CLASSLIST</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f4f4f4;
+      }
+      table {
+        border-collapse: collapse;
+        margin: 20px 0;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        width: 100%;
+      }
+      th,
+      td {
+        text-align: left;
+        padding: 8px;
+      }
+      th {
+        background-color: #4caf50;
+        color: white;
+      }
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+      tr:hover {
+        background-color: #ddd;
+      }
+      .button {
+        padding: 10px 20px;
+        margin: 5px;
+        border: none;
+        border-radius: 5px;
+        background-color: #4caf50;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      .button:hover {
+        background-color: #367c39;
+      }
+      .input {
+        padding: 10px;
+        border: 2px solid #ddd;
+        border-radius: 5px;
+        margin: 10px 0;
+      }
+      .highlight {
+        background-color: yellow !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <input
+        type="text"
+        class="input"
+        id="input"
+        placeholder="Class ismi giriniz..."
+      />
+      <button type="button" class="button" id="addClass">Class Ekle</button>
+      <button type="button" class="button" id="removeClass">Class Cikar</button>
+      <button type="button" class="button" id="toggleClass">
+        Class Toggle Yap
+      </button>
+      <button type="button" class="button" id="checkClass">
+        Class Kontrol
+      </button>
+      <table>
+        <tr>
+          <th>Class</th>
+          <th>Aciklama</th>
+        </tr>
+        <tr id="tr1">
+          <td>highlight</td>
+          <td>Arkaplan rengini sari yapar</td>
+        </tr>
+        <tr id="tr2">
+          <td>active</td>
+          <td>Arkaplan rengini mavi yapar</td>
+        </tr>
+        <tr id="tr3">
+          <td>disabled</td>
+          <td>Arkaplan rengini kirmizi yapar</td>
+        </tr>
+      </table>
+    </div>
+    <script>
+      // DOM ELEMENTS
+      const input = document.getElementById("input");
+      const addClassButtonEl = document.getElementById("addClass");
+      const removeClassButtonEl = document.getElementById("removeClass");
+      const toggleClassButtonEl = document.getElementById("toggleClass");
+      const checkClassButtonEl = document.getElementById("checkClass");
+      const tr1El = document.querySelector("#tr1");
+      const tr2El = document.querySelector("#tr2");
+      const tr3El = document.querySelector("#tr3");
+      // EVENT LISTENERS
+      addClassButtonEl.addEventListener("click", function () {
+        const className = input.value;
+        tr1El.classList.add(className);
+        console.log(className);
+      });
+      removeClassButtonEl.addEventListener("click", function () {
+        const className = input.value;
+        tr1El.classList.remove(className);
+        console.log(className);
+      });
+      toggleClassButtonEl.addEventListener("click", function () {
+        const className = input.value;
+        tr1El.classList.toggle(className);
+        console.log(className);
+      });
+      checkClassButtonEl.addEventListener("click", function () {
+        const className = input.value;
+        const hasClass = tr1El.classList.contains(className);
+        console.log(hasClass);
+      });
+    </script>
+  </body>
+</html>
