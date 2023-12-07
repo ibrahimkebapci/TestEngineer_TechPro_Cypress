@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debounce input</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        .debounce-container {
+            text-align: center;
+        }
+        .debounce-input {
+            padding: 12px 20px;
+            margin-top: 20px;
+            width: 100%;
+            max-width: 300px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            font-size: 16px;
+            transition: box-shadow 0.3s;
+        }
+        .debounce-input:focus {
+            outline: none;
+            box-shadow: 0 0 8px rgba(0, 140, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="debounce-container">
+        <input type="text" id="debounceInput" class="debounce-input"
+        placeholder="Type to search..."
+        onkeyup=""
+        />
+    </div>
+
+    <script>
+        let debounceInput = document.getElementById("debounceInput");
+
+        const debounceSearch = function(event)
+        {
+            setTimeout(function()
+            {
+                console.log("You searched for: ",debounceInput.value);
+            },1000)
+        }
+
+        debounceInput.addEventListener("keyup",debounceSearch);
+    </script>
+</body>
+</html>

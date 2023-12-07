@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Error Handling</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f7f7f7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .login-container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        width: 400px;
+      }
+      .login-container h2 {
+        margin-bottom: 20px;
+        text-align: center;
+        font-weight: 400;
+      }
+      .input-group {
+        margin-bottom: 15px;
+      }
+      .input-group label {
+        font-size: large;
+        display: inline-block;
+        margin-bottom: 5px;
+      }
+      .input-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box; /* Added for better input sizing */
+      }
+      .action-buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+      }
+      .action-buttons button {
+        padding: 10px 25px;
+        border: none;
+        border-radius: 4px;
+        font-size: large;
+        cursor: pointer;
+        font-weight: 400;
+      }
+      .login-btn {
+        background-color: #8e44ad;
+        color: white;
+      }
+      .register-btn {
+        background-color: transparent;
+        color: #8e44ad;
+        border: 1px solid #8e44ad;
+      }
+      /* Hover effects */
+      .action-buttons button:hover {
+        opacity: 0.8;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-container"></div>
+    <h2>Login</h2>
+    <form id="logionForm"></form>
+    <div class="input-group"></div>
+    <label for="username">UserName</label>
+    <input type="text" id="username" name="username" autocomplete="username" />
+
+    <div class="input-group"></div>
+    <label for="password">Password</label>
+    <input
+      type="password"
+      id="password"
+      name="password"
+      autocomplete="current-password"
+    />
+    <div class="action-buttons">
+      <button type="submit" class="login-btn">Login</button>
+      <button type="button" class="register-btn">Register</button>
+    </div>
+    <script>
+      const logionForm = document.querySelector("#loginForm");
+      const username = document.querySelector("#username").value;
+
+        let loading = false;
+
+      logionForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const username = document.querySelector("username").value;
+        const password = document.querySelector("password").value;
+
+    
+        const loadingButton = document.querySelector(".login-btn")
+
+        try {
+            if(!username.trim())
+            {
+                throw new Error('Username is required');
+            }
+            if(!password.trim())
+            {
+                throw new Error('Username is required');
+            }
+
+        } catch (error){
+            console.log(error.message);
+        }
+        finally{
+            logingButton.innerText="Login";
+            console.log(lo.innerText);
+        }
+      });
+    </script>
+  </body>
+</html>
