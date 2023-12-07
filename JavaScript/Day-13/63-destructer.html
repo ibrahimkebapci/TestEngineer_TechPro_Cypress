@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destructure</title>
+  </head>
+  <body>
+    <h1>Destructer</h1>
+
+    <script>
+      const kullaniciInput = "lastName";
+
+      const ogrenci = {
+        firstName: "John",
+        lastName: "Doe",
+        age: 18,
+        departmant: "Computer science",
+        ulke: {
+          sehir: "istanbul",
+          sokak: "bagdat caddesi",
+        },
+      };
+
+      ogrenci[kullaniciInput];
+
+      const { age, departmant, firstName, lastName ,ulke:{sehir}} = ogrenci;
+
+      console.log(age);
+      console.log(departmant);
+      console.log(firstName);
+      console.log(lastName);
+
+      const arr = ["john","doe","18","Computer Science"];
+
+      const [myFriend,myotherFriend] = arr;
+      console.log(myFriend);
+    </script>
+  </body>
+</html>

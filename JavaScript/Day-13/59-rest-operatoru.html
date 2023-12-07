@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest Operatoru</title>
+</head>
+<body>
+    <script>
+        const topla = (a,b,c, ...geriKalanSayilar) =>
+        {
+            const carpim=a*b*c;
+            const toplam = geriKalanSayilar.reduce((acc,curr) =>
+            {
+                return acc + curr;
+            },carpim);
+            return toplam + carpim;
+        };
+        const sonuc = topla(1,2,3,4,5,6,7,8,9,10);
+
+
+    </script>
+</body>
+</html>
