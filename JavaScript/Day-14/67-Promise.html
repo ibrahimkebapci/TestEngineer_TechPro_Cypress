@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise</title>
+  </head>
+  <body>
+    <h1>Promise</h1>
+    <script>
+      const hamburgerimNerede = () => {
+        return new Promise((resolve, reject) => {
+          const hamburgerimIyiPisirilmeOrani = 6;
+
+          if (hamburgerimIyiPisirilmeOrani > 5) {
+            setTimeout(() => {
+              resolve(hamburgerimIyiPisirilmeOrani);
+            }, 3000);
+          } else {
+            reject("Hamburger nanay");
+          }
+        });
+      };
+      hamburgerimNerede()
+        .then((hamburgerimOlmus) => {
+          console.log(hamburgerimOlmus);
+        })
+        .catch((hamburgerimYanmis) => {
+          console.log(hamburgerimYanmis);
+        });
+    </script>
+  </body>
+</html>
