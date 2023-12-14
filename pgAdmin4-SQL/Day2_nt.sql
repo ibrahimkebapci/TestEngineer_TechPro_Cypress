@@ -46,4 +46,48 @@ INSERT INTO doctors(name,salary,email) VALUES('',6000,'dr@mail.com');
 
 SELECT * FROM doctors;
 
-1.25 te kaldım
+--11- tabloya PK constrainti ekleme
+CREATE TABLE students2(
+id INTEGER , --not null, unique, başka bir tablo ile ilişkilendirmek için kullanılır
+name VARCHAR(50),
+grade REAL,
+register_date DATE,
+CONSTRAINT std_pk PRIMARY KEY(id)
+);
+
+SELECT * FROM students2;
+
+CREATE TABLE students4(
+id INTEGER , --not null, unique, başka bir tablo ile ilişkilendirmek için kullanılır
+name VARCHAR(50),
+grade REAL,
+register_date DATE,
+CONSTRAINT std4_pk PRIMARY KEY(id,name)
+);
+
+
+--12- Tabloya FK constrainti ekleme
+
+CREATE TABLE address3(
+adress_id INTEGER,
+street VARCHAR(50),
+city VARCHAR(20),
+student_id INTEGER,
+CONSTRAINT add_fk FOREIGN KEY(student_id) REFERENCES students3(id)
+);
+
+SELECT * FROM address3
+
+
+--13- tabloya CHECK constrainti ekleme
+CREATE TABLE person
+(
+id INTEGER,
+NAME VARCHAR(50),
+salary REAL CHECK(salary>5000),
+age INTEGER CHECK(age>0)
+)
+
+INSERT INTO person VALUES(11,'Ali Can',30000,23);
+
+
