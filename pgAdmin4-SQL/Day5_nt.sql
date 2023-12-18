@@ -80,7 +80,30 @@ WHERE isyeri = 'Vakko'
 
 --27-IS NULL condition  
 
---28-ORDER BY:
+--calisanlar4 tablosunda isim sütunu null olanlarıb isim değerini
+--'MISSING..' listele
+
+SELECT * FROM calisanlar4
+WHERE isim IS NULL
+
+--calisanlar4 tablosunda isim sütununda 
+-- iş yeri null olanları
+
+SELECT * FROM calisanlar4
+WHERE isyeri IS NULL
+
+
+--missing olarak güncelleme
+UPDATE calisanlar4
+SET isyeri='MISSING...'
+WHERE isyeri IS NULL
+
+
+
+--28-ORDER BY: kayıtları belirli fielda göre
+--azalan/artan şekilde sırala
+
+DROP TABLE person;
 
 CREATE TABLE person
 (
@@ -101,3 +124,59 @@ INSERT INTO person VALUES(256789013, 'Veli','Cem', 'Bursa');
 INSERT INTO person VALUES(256789010, 'Samet','Bulut', 'Ankara'); 
 
 SELECT * FROM person;
+
+
+
+--preson tablosundaki tüm kayıtları adrese göre(artan)
+--sıralayarak listeleyiniz.
+SELECT * FROM person
+ORDER BY adres ASC
+
+--preson tablosundaki tüm kayıtları soyisim göre(artan)
+--sıralayarak listeleyiniz.
+SELECT * FROM person
+ORDER BY soyisim DESC --Descending(azalan)
+
+
+--PERSON tablosundaki soyisimi bulut olanları 
+--isime göre azalan sıralayarak listeleyiniz
+
+SELECT * FROM person
+WHERE soyisim='Bulut'
+ORDER BY isim DESC
+
+--ALTERNATİF
+
+SELECT * FROM person
+WHERE soyisim='Bulut'
+ORDER BY 2 DESC;
+
+--PERSON tablosundaki isimE göre azalan  
+--soyada göre artan sıralayarak listeleyiniz
+
+SELECT * FROM person
+ORDER BY isim DESC, soyisim ASC
+
+
+
+--İSİM VE SOYİSİM DEĞERLERİNİ, soyisim kelime uzunluklarına göre sıralayarak listeleyiniz
+
+SELECT isim,soyisim,LENGTH(soyisim) AS karakter_sayisi
+FROM person
+ORDER BY karakter_sayisi
+
+--tüm isim ve soyisim değerlerini aralarında bir boşluk ile 
+--aynı sutunda çağrılarak her bir isim ve soyisim değerlerinin
+--toplam uzunluğuna göre sıralayınız
+
+SELECT CONCAT(isim,' ',soyisim) AS isim_soyisim
+FROM person
+ORDER BY LENGTH (isim)+LENGTH(soyisim)
+
+SELECT CONCAT(isim,' ',soyisim) AS isim_soyisim,LENGTH (CONCAT(isim,soyisim)) karakter_sayisi
+FROM person
+ORDER BY LENGTH (CONCAT(isim,soyisim))
+
+
+
+
