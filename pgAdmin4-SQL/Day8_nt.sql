@@ -1,5 +1,8 @@
 --------------DAY'8 NT-----------------
+
 --39-String Fonksiyonlar
+
+1.40 ta kaldım
 
 CREATE TABLE teachers(
 id int,
@@ -202,16 +205,24 @@ SELECT * FROM siparis;
 
 --sirketler tablosunda sirket_isim sütununa UNIQUE constrainti ekleyiniz.
 
+ALTER TABLE sirketler
+ADD UNIQUE(SİRKET_İSİM)
 
 --siparis tablosunda sirket_id sütununa FOREIGN KEY constrainti ekleyiniz.
+
+ALTER TABLE siparis
+ADD FOREIGN KEY(sirket_id) REFERENCES sirketler(sirket_id)
 
 
 
 --siparis tablosundaki FK constrainti kaldırınız.
 
+ALTER TABLE siparis
+DROP CONSTRAINT siparis_sirket_id_fkey
 
 --employees tablosunda isim sütununda NOT NULL constraintini kaldırınız.
-
+ALTER TABLE employees
+ALTER COLUMN isim DROP NOT NULL
 
 --42-TRANSACTION:databasede en küçük işlem birimi 
 --       BEGIN:transactionı başlatır
@@ -232,9 +243,9 @@ bakiye real
 INSERT INTO hesaplar VALUES(1234,'Harry Potter',10000.3);
 INSERT INTO hesaplar VALUES(5678,'Jack Sparrow',5000.5);
 
-UPDATE hesaplar SET bakiye=bakiye-1000 WHERE hesap_no=1234;
---sistemsel hata oluştu
-UPDATE hesaplar SET bakiye=bakiye+1000 WHERE hesap_no=5678;
+UPDATE hesaplar SET bakiye = bakiye - 1000 WHERE hesap_no = 1234;
+UPDATE hesaplar SET bakiye = bakiye + 1000 WHERE hesap_no = 5678
+
 
 SELECT * FROM hesaplar;
 -------------------------------------------------------------------
