@@ -11,7 +11,7 @@ Then: Istemem somucu yazilir
 And: Yukaridaki 3 kelime icin birden fazla giris yapilacaksa ardından and yazilir
 
 Ornek Test Case
-Given
+    Given
         Https://restful-booker.herokuapp.com/booking/3
     When
         User send a GET Request
@@ -27,13 +27,27 @@ describe("GET Method Testing",() => {
     it("get01", ()=>{
 
         // 1) Set the Endpoint
-        const endPoint = "https://restful-booker.herokuapp.com/booking/3";
+        const url = "https://restful-booker.herokuapp.com/booking/3";
         // 2) Set the payload
         cy.request({
             method:"GET",
-            url : url,
-        }) .then((reponse)=>{
+            url :url,
+        }) .then((response)=>{
             console.log(response.body);
+
+            //Response'i Cypress console'unda görelim
+            cy.log(JSON.stringify(response.body));
+
+            //iv) Dogrulamalara(Assertion) baslayalim
+            //Assert that Status Code is 200
+            expect(response.status).to.eq(200);
+            //Assert that Status text is OK
+            expect(response.statusText).to.eq("OK");
+
+            expect(response.duration).to.be.lessThan(300);
+
+            expect(response.headers["content-type"]).to.include("application/json")
+        
         });
         
     })
