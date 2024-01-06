@@ -8,7 +8,7 @@ describe("GET Request Method Testing", ()=>
             firstname: "Susan",
             lastname:"Brown"
         }
-
+        //Deneme
         //iii)Send the Get Request
         cy.request({
             method:'GET',
