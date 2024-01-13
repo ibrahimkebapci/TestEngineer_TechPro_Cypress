@@ -20,7 +20,7 @@ describe("GET Request Method",()=>
 
     cy.request({
         method:"GET",
-        url: 
+        url: ""
     })
     })
     // 54. dk

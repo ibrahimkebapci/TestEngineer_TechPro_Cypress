@@ -8,6 +8,8 @@ describe("GET Request Method",()=>
 
     })
 
+    cy.fixture("goRestMetaTestData").as("expectedData");
+
     const expectedData{
         "pagination":{
             "total": 2871,
@@ -20,7 +22,7 @@ describe("GET Request Method",()=>
 
     cy.request({
         method:"GET",
-        url: 
+        url: ""
     })
     })
     // 54. dk
