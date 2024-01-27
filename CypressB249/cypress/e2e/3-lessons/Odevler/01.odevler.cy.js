@@ -5,7 +5,7 @@ describe('Odev-01', ()=>
        cy.visit('https://www.webdriveruniversity.com/Contact-Us/contactus.html');
         
        cy.get('[name="first_name"]').type('ibrahim');
-       cy.get('[name="last_name"]').type('Birinci');
+       cy.get('[name="last_name"]').type('Kebapci');
        
         cy.get('[name="message"]').type('hello World');
 
