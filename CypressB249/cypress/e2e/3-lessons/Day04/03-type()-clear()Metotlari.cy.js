@@ -13,5 +13,6 @@ describe('Eylem Metodlari-type() ve clear() metodlari')
         {
             cy.visit('https://www.kitapyurud.com/');
             cy.get('#search-input').type('Cypress{Enter}');
+            sdsadas
         })
     })
